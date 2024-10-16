@@ -1,6 +1,7 @@
 import redis from 'redis';
 import { promisify } from 'util';
 
+
 class RedisClient {
   constructor() {
     this.client = redis.createClient();
@@ -11,12 +12,12 @@ class RedisClient {
     });
 
     this.client.on('connect', () => {
-     console.log('Redis client connected to the server');
+      console.log('Redis client connected to the server');
     });
   }
 
   isAlive() {
-    return this.client.connected;
+    return this.connected;
   }
 
   async get(key) {
