@@ -21,17 +21,17 @@ class DBClient {
 
   async nbUsers() {
     await this.client.connect();
-    const users = await this.client.db(this.database).collection('users');
+    const users = await this.client.db(this.database).collection('users').countDocuments();
     return users;
   }
 
   async nbFiles() {
     await this.client.connect();
-    const files = await this.client.db(this.database).collection('files');
-    return files;
+    const users = await this.client.db(this.database).collection('files').countDocuments();
+    return users;
   }
 }
 
 const dbClient = new DBClient();
 
-export default dbClient;
+module.exports dbClient;
