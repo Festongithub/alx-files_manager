@@ -1,5 +1,5 @@
 #!/usr/bin/node
-
+import sha1 from 'sha1';
 const dbClient = require('../utils/db');
 
 class UsersController {
@@ -28,4 +28,4 @@ class UsersController {
   }
 }
 
-module.exports = UsersController;
+export default  UsersController;

@@ -48,6 +48,14 @@ class DBClient {
     }
     return user[0];
   }
+
+  async userExist(email) {
+    const user = await this.getUser(email);
+    if (user) {
+      return true;
+    }
+    return false;
+  }
 }
 
 const dbClient = new DBClient();
